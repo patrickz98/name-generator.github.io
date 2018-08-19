@@ -4288,8 +4288,6 @@
       t2.position = "relative";
       t2 = elem.style;
       t2.textAlign = "center";
-      t2 = elem.style;
-      C.CssStyleDeclaration_methods._setPropertyHelper$3(t2, (t2 && C.CssStyleDeclaration_methods)._browserPropertyName$1(t2, "box-shadow"), "10px 10px 10px #e3e3e3", "");
       div = L.Simple_createDiv("0px", null, "0px", t1.body, "0px", C.JSInt_methods.toString$0(60) + "px", null);
       t1 = div.style;
       C.CssStyleDeclaration_methods._setPropertyHelper$3(t1, (t1 && C.CssStyleDeclaration_methods)._browserPropertyName$1(t1, "overflow-y"), "scroll", "");
