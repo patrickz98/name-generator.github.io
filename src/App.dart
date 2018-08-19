@@ -6,6 +6,7 @@ import 'NameGenerator.dart';
 class App
 {
 	static const HEADLINE_HEIGHT = 60;
+	static const OPTIONS_WIDTH   = 300;
 
 	App()
 	{
@@ -15,6 +16,7 @@ class App
 		document.body.style.overflow = "hidden";
 
 		buildHeadline();
+		buildOptions();
 		buildWordsContainer();
 	}
 
@@ -26,7 +28,6 @@ class App
 			right: "0px",
 			height: HEADLINE_HEIGHT.toString() + "px"
 		);
-
 		div.style.borderBottom = "2px dotted #6200EE";
 
 		HeadingElement elem = Simple.createH1("Finamo", div);
@@ -37,6 +38,7 @@ class App
 		elem.style.color    = "#6200EE";
 		elem.style.position = "relative";
 		elem.style.textAlign = "center";
+		elem.style.userSelect = "none";
 	}
 
 	HtmlElement buildWord(String word)
@@ -58,7 +60,7 @@ class App
 	{
 		DivElement div = Simple.createDiv(
 			parent: document.body,
-			left: "0px",
+			left: OPTIONS_WIDTH.toString() + "px",
 			top: HEADLINE_HEIGHT.toString() + "px",
 			right: "0px",
 			bottom: "0px",
@@ -108,5 +110,21 @@ class App
 		});
 
 		return list;
+	}
+
+	void buildOptions()
+	{
+		DivElement div = Simple.createDiv(
+			parent: document.body,
+			width: OPTIONS_WIDTH.toString() + "px",
+			left: "0px",
+			top: HEADLINE_HEIGHT.toString() + "px",
+			bottom: "0px",
+		);
+
+		div.style.position = "absolute";
+		div.style.backgroundColor = "#f0f0f0";
+		div.style.userSelect = "none";
+		div.innerHtml = "Halloooooo";
 	}
 }

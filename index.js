@@ -3171,7 +3171,7 @@
     HtmlElement: {
       "^": "Element;",
       $isHtmlElement: 1,
-      "%": "HTMLAudioElement|HTMLBRElement|HTMLButtonElement|HTMLCanvasElement|HTMLContentElement|HTMLDListElement|HTMLDataElement|HTMLDataListElement|HTMLDetailsElement|HTMLDialogElement|HTMLDirectoryElement|HTMLDivElement|HTMLEmbedElement|HTMLFieldSetElement|HTMLFontElement|HTMLFrameElement|HTMLFrameSetElement|HTMLHRElement|HTMLHeadElement|HTMLHtmlElement|HTMLIFrameElement|HTMLImageElement|HTMLInputElement|HTMLLIElement|HTMLLabelElement|HTMLLegendElement|HTMLLinkElement|HTMLMapElement|HTMLMarqueeElement|HTMLMediaElement|HTMLMenuElement|HTMLMetaElement|HTMLMeterElement|HTMLModElement|HTMLOListElement|HTMLObjectElement|HTMLOptGroupElement|HTMLOptionElement|HTMLOutputElement|HTMLParagraphElement|HTMLParamElement|HTMLPictureElement|HTMLPreElement|HTMLProgressElement|HTMLQuoteElement|HTMLScriptElement|HTMLShadowElement|HTMLSlotElement|HTMLSourceElement|HTMLSpanElement|HTMLStyleElement|HTMLTableCaptionElement|HTMLTableCellElement|HTMLTableColElement|HTMLTableDataCellElement|HTMLTableHeaderCellElement|HTMLTextAreaElement|HTMLTimeElement|HTMLTitleElement|HTMLTrackElement|HTMLUListElement|HTMLUnknownElement|HTMLVideoElement;HTMLElement"
+      "%": "HTMLAudioElement|HTMLBRElement|HTMLButtonElement|HTMLCanvasElement|HTMLContentElement|HTMLDListElement|HTMLDataElement|HTMLDataListElement|HTMLDetailsElement|HTMLDialogElement|HTMLDirectoryElement|HTMLEmbedElement|HTMLFieldSetElement|HTMLFontElement|HTMLFrameElement|HTMLFrameSetElement|HTMLHRElement|HTMLHeadElement|HTMLHtmlElement|HTMLIFrameElement|HTMLImageElement|HTMLInputElement|HTMLLIElement|HTMLLabelElement|HTMLLegendElement|HTMLLinkElement|HTMLMapElement|HTMLMarqueeElement|HTMLMediaElement|HTMLMenuElement|HTMLMetaElement|HTMLMeterElement|HTMLModElement|HTMLOListElement|HTMLObjectElement|HTMLOptGroupElement|HTMLOptionElement|HTMLOutputElement|HTMLParagraphElement|HTMLParamElement|HTMLPictureElement|HTMLPreElement|HTMLProgressElement|HTMLQuoteElement|HTMLScriptElement|HTMLShadowElement|HTMLSlotElement|HTMLSourceElement|HTMLSpanElement|HTMLStyleElement|HTMLTableCaptionElement|HTMLTableCellElement|HTMLTableColElement|HTMLTableDataCellElement|HTMLTableHeaderCellElement|HTMLTextAreaElement|HTMLTimeElement|HTMLTitleElement|HTMLTrackElement|HTMLUListElement|HTMLUnknownElement|HTMLVideoElement;HTMLElement"
     },
     AnchorElement: {
       "^": "HtmlElement;",
@@ -3231,6 +3231,10 @@
     },
     CssStyleDeclarationBase: {
       "^": "Object;"
+    },
+    DivElement: {
+      "^": "HtmlElement;",
+      "%": "HTMLDivElement"
     },
     DomException: {
       "^": "Interceptor;",
@@ -4249,7 +4253,7 @@
   }], ["", "src/main.dart",, F, {
     "^": "",
     main: function() {
-      var t1, t2, div, elem, wordsCard;
+      var t1, t2, div, elem, t3, wordsCard;
       t1 = document;
       t2 = t1.body.style;
       t2.padding = "0px";
@@ -4288,7 +4292,20 @@
       t2.position = "relative";
       t2 = elem.style;
       t2.textAlign = "center";
-      div = L.Simple_createDiv("0px", null, "0px", t1.body, "0px", C.JSInt_methods.toString$0(60) + "px", null);
+      t2 = elem.style;
+      C.CssStyleDeclaration_methods._setPropertyHelper$3(t2, (t2 && C.CssStyleDeclaration_methods)._browserPropertyName$1(t2, "user-select"), "none", "");
+      t2 = t1.body;
+      t3 = C.JSInt_methods.toString$0(300) + "px";
+      div = L.Simple_createDiv("0px", null, "0px", t2, null, C.JSInt_methods.toString$0(60) + "px", t3);
+      t3 = div.style;
+      t3.position = "absolute";
+      t2 = div.style;
+      t2.backgroundColor = "#f0f0f0";
+      t2 = div.style;
+      C.CssStyleDeclaration_methods._setPropertyHelper$3(t2, (t2 && C.CssStyleDeclaration_methods)._browserPropertyName$1(t2, "user-select"), "none", "");
+      C.DivElement_methods.setInnerHtml$1(div, "Halloooooo");
+      t1 = t1.body;
+      div = L.Simple_createDiv("0px", null, C.JSInt_methods.toString$0(300) + "px", t1, "0px", C.JSInt_methods.toString$0(60) + "px", null);
       t1 = div.style;
       C.CssStyleDeclaration_methods._setPropertyHelper$3(t1, (t1 && C.CssStyleDeclaration_methods)._browserPropertyName$1(t1, "overflow-y"), "scroll", "");
       t1 = div.style;
@@ -4467,6 +4484,7 @@
   var $ = Isolate.$isolateProperties;
   C.BodyElement_methods = W.BodyElement.prototype;
   C.CssStyleDeclaration_methods = W.CssStyleDeclaration.prototype;
+  C.DivElement_methods = W.DivElement.prototype;
   C.HeadingElement_methods = W.HeadingElement.prototype;
   C.Interceptor_methods = J.Interceptor.prototype;
   C.JSArray_methods = J.JSArray.prototype;
