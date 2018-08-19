@@ -37,6 +37,7 @@ class App
 		elem.style.color    = "#6200EE";
 		elem.style.position = "relative";
 		elem.style.textAlign = "center";
+		elem.style.boxShadow = "10px 10px 10px #e3e3e3";
 	}
 
 	HtmlElement buildWord(String word)
