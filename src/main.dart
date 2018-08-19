@@ -7,8 +7,11 @@ class Main
 	void run()
 	{
 		print("Hallo Pallo");
-		NameGenerator namegen = new NameGenerator();
-		namegen.main();
+		NameGenerator generator = new NameGenerator(contains: "x");
+		List<String> words = generator.createList(100);
+
+		document.body.appendHtml("Haloo");
+		document.body.appendText(words.toString());
 	}
 }
 
