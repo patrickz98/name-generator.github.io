@@ -2,10 +2,28 @@ import 'dart:html';
 
 class Simple
 {
-	static HtmlElement createElem(String tagName, [HtmlElement parent])
+	static HeadingElement createElem(String tagName, [HtmlElement parent])
 	{
-		HtmlElement elem = document.createElement(tagName);
-		resetPaddingMargin(elem);
+		HeadingElement elem = document.createElement(tagName);
+		elem.style.padding = "0px";
+		elem.style.margin  = "0px";
+
+		if (parent != null)
+		{
+			parent.append(elem);
+		}
+
+		return elem;
+	}
+	
+	static HeadingElement createH1(String title, [HtmlElement parent])
+	{
+		HeadingElement elem = HeadingElement.h1();
+		elem.style.padding = "0px";
+		elem.style.margin  = "0px";
+		elem.style.lineHeight = "60px";
+		elem.style.fontSize = "30px";
+		elem.innerHtml = title;
 
 		if (parent != null)
 		{
@@ -30,8 +48,8 @@ class Simple
 		div.style.width  = width;
 		div.style.height = height;
 
-		div.style.padding = "1xp";
-		div.style.margin  = "1xp";
+//		div.style.padding = "1xp";
+//		div.style.margin  = "1xp";
 
 		if (parent != null)
 		{

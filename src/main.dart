@@ -4,5 +4,5 @@ import 'App.dart';
 
 void main()
 {
-	new App().build();
+	new App();
 }
