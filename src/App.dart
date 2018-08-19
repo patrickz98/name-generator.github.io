@@ -33,6 +33,7 @@ class App
 		document.body.appendText(words.toString());
 
 		document.body.style.padding = "0px";
+		document.body.style.border = "0px";
 		document.body.style.margin = "0px";
 	}
 }
