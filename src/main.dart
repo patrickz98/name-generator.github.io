@@ -1,21 +1,8 @@
 import 'dart:html';
 
-import 'NameGenerator.dart';
-
-class Main
-{
-	void run()
-	{
-		print("Hallo Pallo");
-		NameGenerator generator = new NameGenerator(contains: "x");
-		List<String> words = generator.createList(100);
-
-		document.body.appendHtml("Haloo");
-		document.body.appendText(words.toString());
-	}
-}
+import 'App.dart';
 
 void main()
 {
-	new Main().run();
+	new App().build();
 }
